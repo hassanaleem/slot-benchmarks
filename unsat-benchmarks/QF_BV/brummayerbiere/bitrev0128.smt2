@@ -1,0 +1,15 @@
+(set-info :smt-lib-version 2.6)
+(set-logic QF_BV)
+(set-info :source |
+Bit-reversal rev(x)
+From the book "Hacker's delight" by Henry S. Warren, Jr., page 101
+We verify rev(rev(x)) = x
+
+Contributed by Robert Brummayer (robert.brummayer@gmail.com)
+|)
+(set-info :category "crafted")
+(set-info :status unsat)
+(declare-fun x () (_ BitVec 128))
+(assert (let ((?v_0 ((_ zero_extend 121) (_ bv1 7)))) (let ((?v_1 (bvor (bvshl (bvand x (_ bv113427455640312821154458202477256070485 128)) ?v_0) (bvlshr (bvand x (_ bv226854911280625642308916404954512140970 128)) ?v_0))) (?v_2 ((_ zero_extend 121) (_ bv2 7)))) (let ((?v_3 (bvor (bvshl (bvand ?v_1 (_ bv68056473384187692692674921486353642291 128)) ?v_2) (bvlshr (bvand ?v_1 (_ bv272225893536750770770699685945414569164 128)) ?v_2))) (?v_4 ((_ zero_extend 121) (_ bv4 7)))) (let ((?v_5 (bvor (bvshl (bvand ?v_3 (_ bv20016609818878733144904388672456953615 128)) ?v_4) (bvlshr (bvand ?v_3 (_ bv320265757102059730318470218759311257840 128)) ?v_4))) (?v_6 ((_ zero_extend 121) (_ bv8 7)))) (let ((?v_7 (bvor (bvshl (bvand ?v_5 (_ bv1324055902416102970674609367438786815 128)) ?v_6) (bvlshr (bvand ?v_5 (_ bv338958311018522360492699998064329424640 128)) ?v_6))) (?v_8 ((_ zero_extend 121) (_ bv16 7)))) (let ((?v_9 (bvor (bvshl (bvand ?v_7 (_ bv5192217631581220737344928932233215 128)) ?v_8) (bvlshr (bvand ?v_7 (_ bv340277174703306882242637262502835978240 128)) ?v_8))) (?v_10 ((_ zero_extend 121) (_ bv32 7)))) (let ((?v_11 (bvor (bvshl (bvand ?v_9 (_ bv79228162495817593524129366015 128)) ?v_10) (bvlshr (bvand ?v_9 (_ bv340282366841710300967557013907638845440 128)) ?v_10))) (?v_12 ((_ zero_extend 121) (_ bv64 7)))) (let ((?v_13 (bvor (bvshl (bvand ?v_11 (_ bv18446744073709551615 128)) ?v_12) (bvlshr (bvand ?v_11 (_ bv340282366920938463444927863358058659840 128)) ?v_12)))) (let ((?v_14 (bvor (bvshl (bvand ?v_13 (_ bv113427455640312821154458202477256070485 128)) ?v_0) (bvlshr (bvand ?v_13 (_ bv226854911280625642308916404954512140970 128)) ?v_0)))) (let ((?v_15 (bvor (bvshl (bvand ?v_14 (_ bv68056473384187692692674921486353642291 128)) ?v_2) (bvlshr (bvand ?v_14 (_ bv272225893536750770770699685945414569164 128)) ?v_2)))) (let ((?v_16 (bvor (bvshl (bvand ?v_15 (_ bv20016609818878733144904388672456953615 128)) ?v_4) (bvlshr (bvand ?v_15 (_ bv320265757102059730318470218759311257840 128)) ?v_4)))) (let ((?v_17 (bvor (bvshl (bvand ?v_16 (_ bv1324055902416102970674609367438786815 128)) ?v_6) (bvlshr (bvand ?v_16 (_ bv338958311018522360492699998064329424640 128)) ?v_6)))) (let ((?v_18 (bvor (bvshl (bvand ?v_17 (_ bv5192217631581220737344928932233215 128)) ?v_8) (bvlshr (bvand ?v_17 (_ bv340277174703306882242637262502835978240 128)) ?v_8)))) (let ((?v_19 (bvor (bvshl (bvand ?v_18 (_ bv79228162495817593524129366015 128)) ?v_10) (bvlshr (bvand ?v_18 (_ bv340282366841710300967557013907638845440 128)) ?v_10)))) (not (= (bvnot (ite (= (bvor (bvshl (bvand ?v_19 (_ bv18446744073709551615 128)) ?v_12) (bvlshr (bvand ?v_19 (_ bv340282366920938463444927863358058659840 128)) ?v_12)) x) (_ bv1 1) (_ bv0 1))) (_ bv0 1))))))))))))))))))
+(check-sat)
+(exit)

@@ -1,0 +1,16 @@
+(set-info :smt-lib-version 2.6)
+(set-logic QF_BV)
+(set-info :source |
+ Patrice Godefroid, SAGE (systematic dynamic test generation)
+ For more information: http://research.microsoft.com/en-us/um/people/pg/public_psfiles/ndss2008.pdf
+|)
+(set-info :category "industrial")
+(set-info :status unsat)
+(declare-fun T4_8 () (_ BitVec 32))
+(declare-fun T1_8 () (_ BitVec 8))
+(declare-fun T1_9 () (_ BitVec 8))
+(declare-fun T1_10 () (_ BitVec 8))
+(declare-fun T1_11 () (_ BitVec 8))
+(assert (let ((?v_2 ((_ extract 7 0) (bvashr T4_8 ((_ zero_extend 24) (_ bv8 8))))) (?v_1 ((_ extract 7 0) (bvashr T4_8 ((_ zero_extend 24) (_ bv16 8))))) (?v_0 ((_ extract 7 0) (bvashr T4_8 ((_ zero_extend 24) (_ bv24 8)))))) (and true (= T4_8 (bvor (bvshl (bvor (bvshl (bvor (bvshl ((_ zero_extend 24) T1_11) (_ bv8 32)) ((_ zero_extend 24) T1_10)) (_ bv8 32)) ((_ zero_extend 24) T1_9)) (_ bv8 32)) ((_ zero_extend 24) T1_8))) (not (= T1_10 (_ bv73 8))) (= ?v_0 (_ bv32 8)) (not (= ?v_0 (_ bv95 8))) (bvult ?v_0 (_ bv65 8)) (bvult ?v_0 (_ bv97 8)) (bvult ?v_0 (_ bv48 8)) (bvule ?v_1 (_ bv90 8)) (bvule (_ bv65 8) ?v_1) (bvult ?v_1 (_ bv97 8)) (bvult (_ bv57 8) ?v_1) (bvule (_ bv48 8) ?v_1) (bvule ?v_2 (_ bv90 8)) (bvule (_ bv65 8) ?v_2) (bvult ?v_2 (_ bv97 8)) (bvult (_ bv57 8) ?v_2) (bvule (_ bv48 8) ?v_2) (= T1_9 (_ bv86 8)) (= T1_8 (_ bv65 8)) (bvule T1_8 (_ bv90 8)) (bvule (_ bv65 8) T1_8) (bvult T1_8 (_ bv97 8)) (bvult (_ bv57 8) T1_8) (bvule (_ bv48 8) T1_8) (not (= T4_8 (_ bv1163280727 32))) (= T4_8 (_ bv541677121 32)) (= (_ bv541677121 32) T4_8))))
+(check-sat)
+(exit)
